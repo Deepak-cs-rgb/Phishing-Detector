@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuard Warning - Dangerous Website Blocked</title>
+  <link rel="stylesheet" href="warning.css">
+</head>
+<body>
+  <div class="warning-container">
+    <div class="warning-content">
+      <!-- Header -->
+      <div class="warning-header">
+        <div class="warning-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
+            <line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="17" x2="12.01" y2="17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h1 class="warning-title">Dangerous Website Blocked</h1>
+        <p class="warning-subtitle">PhishGuard has prevented you from visiting a potentially harmful website</p>
+      </div>
+
+      <!-- Details -->
+      <div class="warning-details">
+        <div class="detail-item">
+          <strong>Blocked URL:</strong>
+          <span class="blocked-url" id="blockedUrl">Loading...</span>
+        </div>
+        <div class="detail-item">
+          <strong>Threat Type:</strong>
+          <span class="threat-type" id="threatType">Phishing/Malicious Site</span>
+        </div>
+        <div class="detail-item">
+          <strong>Risk Level:</strong>
+          <span class="risk-level high">High Risk</span>
+        </div>
+      </div>
+
+      <!-- Warning Message -->
+      <div class="warning-message">
+        <h3>Why was this site blocked?</h3>
+        <ul id="warningReasons">
+          <li>This website has been identified as a potential phishing site</li>
+          <li>The URL contains suspicious patterns commonly used by scammers</li>
+          <li>The site may attempt to steal your personal information</li>
+          <li>Visiting this site could compromise your security and privacy</li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="warning-actions">
+        <button class="btn btn-primary" id="goBackBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Go Back to Safety
+        </button>
+        
+        <button class="btn btn-secondary" id="reportBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m0 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Report This Site
+        </button>
+      </div>
+
+      <!-- Advanced Options (Hidden by default) -->
+      <div class="advanced-section" id="advancedSection">
+        <details class="advanced-details">
+          <summary class="advanced-toggle">Advanced Options</summary>
+          <div class="advanced-content">
+            <p class="advanced-warning">
+              <strong>⚠️ Warning:</strong> Only proceed if you understand the risks and trust this website completely.
+            </p>
+            <div class="advanced-actions">
+              <button class="btn btn-outline" id="addWhitelistBtn">
+                Add to Trusted Sites
+              </button>
+              <button class="btn btn-danger" id="proceedAnywayBtn">
+                Proceed Anyway (Unsafe)
+              </button>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Footer -->
+      <div class="warning-footer">
+        <div class="footer-info">
+          <div class="footer-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L13.09 8.26L20 9L13.09 15.74L12 22L10.91 15.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
+            </svg>
+            PhishGuard
+          </div>
+          <p class="footer-text">Protecting you from online threats</p>
+        </div>
+        <div class="footer-links">
+          <a href="#" id="learnMoreLink">Learn More</a>
+          <a href="#" id="feedbackLink">Send Feedback</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="warning-background">
+      <div class="warning-pattern"></div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="warning.js"></script>
+</body>
+</html>

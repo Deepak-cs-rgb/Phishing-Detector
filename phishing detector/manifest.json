@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - Phishing Protection",
+  "version": "1.0.0",
+  "description": "Real-time phishing detection and website security scanner to protect you from malicious sites",
+  
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webNavigation",
+    "alarms",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["phishing-detector.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PhishGuard Protection"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["warning.html", "warning.css", "warning.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
